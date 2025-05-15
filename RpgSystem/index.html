@@ -9,6 +9,7 @@
 
 <body>
 
+<div class ="main-container">
     <div class="Iniciative">
         <h2>Sistema de Iniciativa</h2>
         <input type="text" id="nome" placeholder="Nome">
@@ -20,13 +21,28 @@
         <button onclick="resetIniciative()">Resetar</button>
     </div>
 
+    <div class="battle-grid-container">
+        <h2>Grid de Batalha</h2>
+        <div class="grid-controls">
+            <button onclick="expandGrid()">Expandir Grid</button>
+            <button onclick="editMode = 'move'; selectedElement = null">Mover</button>
+            <button onclick="editMode = 'wall'; selectedElement = null">Parede</button>
+            <button onclick="editMode = 'obstacle'; selectedElement = null">Objeto</button>
+            <button onclick="clearGrid()">Limpar Grid</button>
+
+            <span>Tamanho: </span>
+            <input type="number" id="gridSize" value="10" min="5" max="30">
+        </div>
+        <div id="battleGrid"></div>
+    </div>
+
     <div id="efeitosContainer"></div>
-    
-    
+
     <div id="containerHistorico">
         <h3>Histórico:</h3>
         <div id="historico"></div>
     </div>
+</div>
 
     <script src="index.js"></script>
 </body>
